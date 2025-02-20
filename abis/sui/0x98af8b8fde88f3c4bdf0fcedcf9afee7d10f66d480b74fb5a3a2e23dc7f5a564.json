@@ -1,0 +1,1068 @@
+{
+  "airdrop": {
+    "fileFormatVersion": 6,
+    "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+    "name": "airdrop",
+    "friends": [
+      {
+        "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+        "name": "distribution"
+      }
+    ],
+    "structs": {
+      "Locked": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "balance",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                      "module": "wal",
+                      "name": "WAL",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "nft",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "ID",
+                "typeArguments": []
+              }
+            }
+          }
+        ]
+      },
+      "WALAirdrop": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "initial_allocation",
+            "type": "U64"
+          },
+          {
+            "name": "allocation_withdrawn",
+            "type": "Bool"
+          },
+          {
+            "name": "locked_id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "ID",
+                "typeArguments": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    "exposedFunctions": {
+      "allocation_withdrawn": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "WALAirdrop",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          "Bool"
+        ]
+      },
+      "available_balance": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "Locked",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          "U64"
+        ]
+      },
+      "initial_allocation": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "WALAirdrop",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          "U64"
+        ]
+      },
+      "is_valid_for": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "WALAirdrop",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "Locked",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          "Bool"
+        ]
+      },
+      "locked_id": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "WALAirdrop",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "object",
+              "name": "ID",
+              "typeArguments": []
+            }
+          }
+        ]
+      },
+      "new": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "balance",
+              "name": "Balance",
+              "typeArguments": [
+                {
+                  "Struct": {
+                    "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                    "module": "wal",
+                    "name": "WAL",
+                    "typeArguments": []
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          {
+            "Struct": {
+              "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+              "module": "airdrop",
+              "name": "WALAirdrop",
+              "typeArguments": []
+            }
+          }
+        ]
+      },
+      "recover": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Struct": {
+              "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+              "module": "airdrop",
+              "name": "Locked",
+              "typeArguments": []
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropRecoveryCap",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "clock",
+                "name": "Clock",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      },
+      "transfer": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Struct": {
+              "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+              "module": "airdrop",
+              "name": "WALAirdrop",
+              "typeArguments": []
+            }
+          },
+          "Address"
+        ],
+        "return": []
+      },
+      "withdraw": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "airdrop",
+                "name": "WALAirdrop",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Struct": {
+              "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+              "module": "airdrop",
+              "name": "Locked",
+              "typeArguments": []
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "clock",
+                "name": "Clock",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      }
+    }
+  },
+  "config": {
+    "fileFormatVersion": 6,
+    "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+    "name": "config",
+    "friends": [
+      {
+        "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+        "name": "airdrop"
+      }
+    ],
+    "structs": {
+      "AirdropConfig": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "unlock_timestamp_ms",
+            "type": {
+              "Struct": {
+                "address": "0x1",
+                "module": "option",
+                "name": "Option",
+                "typeArguments": [
+                  "U64"
+                ]
+              }
+            }
+          },
+          {
+            "name": "recovery_timestamp_ms",
+            "type": "U64"
+          },
+          {
+            "name": "recovered_tokens",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                      "module": "wal",
+                      "name": "WAL",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "AirdropConfigCap": {
+        "abilities": {
+          "abilities": [
+            "Store",
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          }
+        ]
+      },
+      "AirdropRecoveryCap": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    "exposedFunctions": {
+      "assert_can_withdraw_funds": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "clock",
+                "name": "Clock",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      },
+      "enable": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfigCap",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "clock",
+                "name": "Clock",
+                "typeArguments": []
+              }
+            }
+          },
+          "U64"
+        ],
+        "return": []
+      },
+      "merge_balance": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "balance",
+              "name": "Balance",
+              "typeArguments": [
+                {
+                  "Struct": {
+                    "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                    "module": "wal",
+                    "name": "WAL",
+                    "typeArguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "return": []
+      },
+      "new_recovery_cap": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfigCap",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          {
+            "Struct": {
+              "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+              "module": "config",
+              "name": "AirdropRecoveryCap",
+              "typeArguments": []
+            }
+          }
+        ]
+      },
+      "recovery_timestamp_ms": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          "U64"
+        ]
+      },
+      "unlock_timestamp_ms": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          {
+            "Struct": {
+              "address": "0x1",
+              "module": "option",
+              "name": "Option",
+              "typeArguments": [
+                "U64"
+              ]
+            }
+          }
+        ]
+      },
+      "withdraw": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfigCap",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfig",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "coin",
+              "name": "Coin",
+              "typeArguments": [
+                {
+                  "Struct": {
+                    "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                    "module": "wal",
+                    "name": "WAL",
+                    "typeArguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "distribution": {
+    "fileFormatVersion": 6,
+    "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+    "name": "distribution",
+    "friends": [],
+    "structs": {
+      "DISTRIBUTION": {
+        "abilities": {
+          "abilities": [
+            "Drop"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "dummy_field",
+            "type": "Bool"
+          }
+        ]
+      },
+      "DistributionPool": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "balance",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                      "module": "wal",
+                      "name": "WAL",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "hashes",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "vec_set",
+                "name": "VecSet",
+                "typeArguments": [
+                  "Address"
+                ]
+              }
+            }
+          },
+          {
+            "name": "recipients",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "linked_table",
+                "name": "LinkedTable",
+                "typeArguments": [
+                  "Address",
+                  "U64"
+                ]
+              }
+            }
+          },
+          {
+            "name": "total_pool_amount",
+            "type": "U64"
+          }
+        ]
+      }
+    },
+    "exposedFunctions": {
+      "create_hash": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Vector": "Address"
+          },
+          {
+            "Vector": "U64"
+          }
+        ],
+        "return": [
+          "Address"
+        ]
+      },
+      "distribute": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "distribution",
+                "name": "DistributionPool",
+                "typeArguments": []
+              }
+            }
+          },
+          "U64",
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      },
+      "fund_pool": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "distribution",
+                "name": "DistributionPool",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "coin",
+              "name": "Coin",
+              "typeArguments": [
+                {
+                  "Struct": {
+                    "address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+                    "module": "wal",
+                    "name": "WAL",
+                    "typeArguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "return": []
+      },
+      "new": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "config",
+                "name": "AirdropConfigCap",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Vector": "Address"
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      },
+      "prepare_recipients": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+                "module": "distribution",
+                "name": "DistributionPool",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Vector": "Address"
+          },
+          {
+            "Vector": "U64"
+          }
+        ],
+        "return": []
+      }
+    }
+  },
+  "events": {
+    "fileFormatVersion": 6,
+    "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+    "name": "events",
+    "friends": [
+      {
+        "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+        "name": "airdrop"
+      },
+      {
+        "address": "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564",
+        "name": "config"
+      }
+    ],
+    "structs": {
+      "AdminWithdrawal": {
+        "abilities": {
+          "abilities": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "amount",
+            "type": "U64"
+          }
+        ]
+      },
+      "NFTWithdrawal": {
+        "abilities": {
+          "abilities": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "amount",
+            "type": "U64"
+          },
+          {
+            "name": "nft_id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "ID",
+                "typeArguments": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    "exposedFunctions": {
+      "emit_admin_withdrawal": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          "U64"
+        ],
+        "return": []
+      },
+      "emit_nft_withdrawal": {
+        "visibility": "Friend",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          "U64",
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "object",
+              "name": "ID",
+              "typeArguments": []
+            }
+          }
+        ],
+        "return": []
+      }
+    }
+  }
+}

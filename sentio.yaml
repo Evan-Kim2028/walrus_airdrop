@@ -1,0 +1,4 @@
+project: walrus_airdrop
+contracts:
+  - chain: sui_mainnet
+    address: "0x98af8b8fde88f3c4bdf0fcedcf9afee7d10f66d480b74fb5a3a2e23dc7f5a564"

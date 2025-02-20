@@ -1,0 +1,118 @@
+[
+	{
+		"fileFormatVersion": 6,
+		"address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+		"name": "wal",
+		"friends": [],
+		"structs": {
+			"ProtectedTreasury": {
+				"abilities": {
+					"abilities": [
+						"Key"
+					]
+				},
+				"typeParameters": [],
+				"fields": [
+					{
+						"name": "id",
+						"type": {
+							"Struct": {
+								"address": "0x2",
+								"module": "object",
+								"name": "UID",
+								"typeArguments": []
+							}
+						}
+					}
+				]
+			},
+			"TreasuryCapKey": {
+				"abilities": {
+					"abilities": [
+						"Copy",
+						"Drop",
+						"Store"
+					]
+				},
+				"typeParameters": [],
+				"fields": [
+					{
+						"name": "dummy_field",
+						"type": "Bool"
+					}
+				]
+			},
+			"WAL": {
+				"abilities": {
+					"abilities": [
+						"Drop"
+					]
+				},
+				"typeParameters": [],
+				"fields": [
+					{
+						"name": "dummy_field",
+						"type": "Bool"
+					}
+				]
+			}
+		},
+		"exposedFunctions": {
+			"burn": {
+				"visibility": "Public",
+				"isEntry": false,
+				"typeParameters": [],
+				"parameters": [
+					{
+						"MutableReference": {
+							"Struct": {
+								"address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+								"module": "wal",
+								"name": "ProtectedTreasury",
+								"typeArguments": []
+							}
+						}
+					},
+					{
+						"Struct": {
+							"address": "0x2",
+							"module": "coin",
+							"name": "Coin",
+							"typeArguments": [
+								{
+									"Struct": {
+										"address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+										"module": "wal",
+										"name": "WAL",
+										"typeArguments": []
+									}
+								}
+							]
+						}
+					}
+				],
+				"return": []
+			},
+			"total_supply": {
+				"visibility": "Public",
+				"isEntry": false,
+				"typeParameters": [],
+				"parameters": [
+					{
+						"Reference": {
+							"Struct": {
+								"address": "0x356a26eb9e012a68958082340d4c4116e7f55615cf27affcff209cf0ae544f59",
+								"module": "wal",
+								"name": "ProtectedTreasury",
+								"typeArguments": []
+							}
+						}
+					}
+				],
+				"return": [
+					"U64"
+				]
+			}
+		}
+	}
+]
