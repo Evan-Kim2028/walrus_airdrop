@@ -1,5 +1,6 @@
 import { initWALAirdropProcessor } from './walAirdropProcessor.js'
-import { initWALMainnetEventsProcessor } from './walMainnetProcessor.js'
+import { initWalMainnetStakingProcessor, initWALMainnetEventsProcessor } from './walMainnetProcessor.js'
 
 // initWALAirdropProcessor()
 initWALMainnetEventsProcessor()
+initWalMainnetStakingProcessor()
